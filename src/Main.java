@@ -49,7 +49,7 @@ public class Main{
         panel.add(btnKardex, gbc);
         
         btnClose = new JButton("Salir");
-        gbc.fill = GridBagConstraints.VERTICAL;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 9;
         gbc.gridy = 2;
         gbc.gridwidth = 3;
@@ -62,17 +62,35 @@ public class Main{
 	        }
 	    });
         
-        // Content
+        lblTitle = new JLabel("Title");
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        gbc.gridwidth = 3;
+        gbc.gridheight = 2;
+        lblTitle.setVisible(false);
+        panel.add(lblTitle, gbc);
         
-        // panelData = new JPanel(); 
-        // panelData.setLayout(new FlowLayout());
-        // lblTitle = new JLabel("Title");
-        
-        // btnWareHouse.addActionListener(new ActionListener(){
-        // 	public void actionPerformed(ActionEvent e){
-        		
-        // 	}
-        // });
+        btnWareHouse.addActionListener(new ActionListener(){
+        	public void actionPerformed(ActionEvent e){
+                lblTitle.setText("Bodega");
+                lblTitle.setVisible(true);
+        	}
+        });
+
+        btnKardex.addActionListener(new ActionListener(){
+        	public void actionPerformed(ActionEvent e){
+                lblTitle.setText("Kardex");
+                lblTitle.setVisible(true);
+        	}
+        });
+
+        btnReports.addActionListener((new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                lblTitle.setText("Reportes");
+                lblTitle.setVisible(true);
+            }
+        }));
         
         mainFrame.add(panel);
         //mainFrame.add(panelData);
